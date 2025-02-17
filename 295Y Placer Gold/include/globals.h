@@ -31,3 +31,8 @@ void driverControl();
 void setDrive(int leftPwr, int rightPwr);
 void speedyDrive();
 void setDriveSpeed(float voltage);
+void rotateHeading(float theta, float timeout, int speedLimit, bool execution);
+void rotatePoint(float theta, float timeout);
+void setPose(float x, float y, float theta);
+void translatePoint(float x, float y, bool dir, float timeout, bool async);
+void translatePose(float x, float y, float heading, float timeout, bool dir, float rvalue);

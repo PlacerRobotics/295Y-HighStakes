@@ -22,3 +22,24 @@ void setDriveSpeed(float voltage){
     left_motors.set_voltage_limit(voltage);
     right_motors.set_voltage_limit(voltage);
 }
+
+//robot turns to a specific heading
+void rotateHeading(float theta, float timeout, int speedLimit, bool execution){
+    chassis.turnToHeading(theta, timeout, {.maxSpeed = speedLimit}, execution);
+}
+//robot turns to a point on cartesian
+void rotatePoint(float theta, float timeout){
+    chassis.turnToHeading(theta, timeout);
+}
+//tares the current position of the robot
+void setPose(float x, float y, float theta){
+    chassis.setPose(x, y, theta);
+}
+//moves the robot to a specific point on the field, no heading
+void translatePoint(float x, float y, bool dir, float timeout, bool async){
+    chassis.moveToPoint(x, y, timeout, {.forwards = dir}, async);
+}
+
+void translatePose(float x, float y, float heading, float timeout, bool dir, float rvalue){
+    chassis.moveToPose(x, y, heading, timeout, {.forwards = dir, .lead = rvalue});
+}

@@ -39,7 +39,7 @@ void setPose(float x, float y, float theta){
 void translatePoint(float x, float y, bool dir, float timeout, bool async){
     chassis.moveToPoint(x, y, timeout, {.forwards = dir}, async);
 }
-
+//moves the robot to a specific point on the field, with heading
 void translatePose(float x, float y, float heading, float timeout, bool dir, float rvalue){
     chassis.moveToPose(x, y, heading, timeout, {.forwards = dir, .lead = rvalue});
 }
